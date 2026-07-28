@@ -1,0 +1,16 @@
+# Pillar C additional dependencies (not yet captured in the shared
+# ../../../environment.yml). Install into the `corpfin` conda env:
+#
+#   conda activate corpfin
+#   pip install -r requirements-pillarc.txt
+#
+# torch is CPU-only here - c2_smoketest.py already confirms CPU inference
+# is sufficient for all-MiniLM-L6-v2 at this project's scale, so the ~2GB
+# CUDA build isn't needed. If pip pulls a GPU build anyway, install torch
+# first with:
+#   pip install torch --index-url https://download.pytorch.org/whl/cpu
+sentence-transformers>=3.0
+torch>=2.0
+tqdm>=4.66
+beautifulsoup4>=4.12
+lxml>=5.0
